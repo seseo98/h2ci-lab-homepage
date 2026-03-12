@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   NEWS,
   CATEGORY_LABEL,
   CATEGORY_COLOR,
-  type NewsCategory,
 } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -18,16 +16,6 @@ function formatDate(d: string) {
   const date = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2] ?? 1));
   return date.toLocaleDateString("en-US", { year: "numeric", month: "short" });
 }
-
-const CATEGORIES: { value: NewsCategory | "all"; label: string }[] = [
-  { value: "all",   label: "All" },
-  { value: "paper", label: "📄 Papers" },
-  { value: "award", label: "🏆 Awards" },
-  { value: "talk",  label: "🎤 Talks" },
-  { value: "event", label: "📅 Events" },
-  { value: "join",  label: "👋 New Members" },
-  { value: "misc",  label: "📌 Misc" },
-];
 
 export default function NewsPage() {
   // 날짜 최신순 정렬
