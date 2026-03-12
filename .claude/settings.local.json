@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(cmd /c \"node --version && npm --version\")",
+      "Bash(cmd /c \"node -v\")",
+      "Bash(cmd /c \"npm -v\")",
+      "Bash(cmd /c \"where node 2>&1 && node -v 2>&1\")",
+      "Bash(powershell -Command \"node -v; npm -v\")",
+      "Bash(powershell -Command \"Get-Command node -ErrorAction SilentlyContinue; Get-Item ''C:\\\\Program Files\\\\nodejs\\\\node.exe'' -ErrorAction SilentlyContinue; Get-Item ''C:\\\\Users\\\\admin\\\\AppData\\\\Roaming\\\\nvm\\\\*'' -ErrorAction SilentlyContinue; ls ''C:\\\\Program Files\\\\nodejs'' -ErrorAction SilentlyContinue\")",
+      "Bash(powershell -Command \"Test-Path ''C:\\\\Program Files\\\\nodejs''; Test-Path ''C:\\\\Users\\\\admin\\\\AppData\\\\Roaming\\\\nvm''; ls ''C:\\\\'' | Select-Object Name\")",
+      "Bash(powershell -Command \"winget --version 2>&1; Get-Command winget -ErrorAction SilentlyContinue | Select-Object Source\")",
+      "Bash(powershell -Command \"winget install OpenJS.NodeJS.LTS --silent --accept-package-agreements --accept-source-agreements 2>&1\")",
+      "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\nodejs\\\\node.exe'' -v; & ''C:\\\\Program Files\\\\nodejs\\\\npm.cmd'' -v\")",
+      "Bash(powershell -Command \"Set-Location ''C:\\\\Users\\\\admin\\\\Desktop\\\\2026_1\\\\H2CI\\\\lab_homepage''; & ''C:\\\\Program Files\\\\nodejs\\\\npx.cmd'' create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --no-turbopack --import-alias ''@/*'' 2>&1\")",
+      "Bash(cmd /c \"set PATH=C:\\\\Program Files\\\\nodejs;%PATH% && npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --no-turbopack --import-alias @/* 2>&1\")",
+      "Bash(powershell -ExecutionPolicy:*)",
+      "Bash(python scripts/office/unpack.py \"C:\\\\Users\\\\admin\\\\Desktop\\\\2026_1\\\\H2CI\\\\H2CI logos.pptx\" \"C:\\\\Temp\\\\h2ci_logos_unpacked\")",
+      "Bash($SKILL_BASE = \"C:\\\\Users\\\\admin\\\\AppData\\\\Roaming\\\\Claude\\\\local-agent-mode-sessions\\\\skills-plugin\\\\8e65f50f-68a4-4af9-b54f-981efd11f3cb\\\\7ed2053d-df37-47fb-ad5b-22f21267e90c\\\\skills\\\\pptx\")",
+      "Bash(python \"$SKILL_BASE/scripts/office/unpack.py\" \"C:\\\\Users\\\\admin\\\\Desktop\\\\2026_1\\\\H2CI\\\\H2CI logos.pptx\" \"C:\\\\Temp\\\\h2ci_logos_unpacked\")",
+      "Bash(SKILL_BASE=\"C:/Users/admin/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/8e65f50f-68a4-4af9-b54f-981efd11f3cb/7ed2053d-df37-47fb-ad5b-22f21267e90c/skills/pptx\")",
+      "Bash(python \"$SKILL_BASE/scripts/office/unpack.py\" \"C:/Users/admin/Desktop/2026_1/H2CI/H2CI logos.pptx\" \"C:/Temp/h2ci_logos_unpacked\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(Select-Object -First 30)",
+      "Bash(cmd /c \"dir C:\\\\Users\\\\admin\\\\Desktop\\\\2026_1\\\\H2CI\\\\lab_homepage\")",
+      "Bash(cmd /c \"dir /b C:\\\\Users\\\\admin\\\\Desktop\\\\2026_1\\\\H2CI\\\\lab_homepage\")",
+      "Bash(cmd /c \"where node 2>&1 && where npm 2>&1\")",
+      "Bash(cmd /c \"dir C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Programs\\\\node* 2>&1\")",
+      "Bash(cmd /c \"dir C:\\\\Program Files\\\\nodejs 2>&1\")",
+      "Bash(cmd /c \"powershell -Command \"\"Get-Command node -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\"\"\")"
+    ]
+  }
+}

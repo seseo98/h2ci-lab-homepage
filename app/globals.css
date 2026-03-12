@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-orange: #F5A01A;
+  --brand-red: #C2305A;
+  --brand-crimson: #9E1B44;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-stone-800 bg-white antialiased;
+  }
+}
+
+@layer components {
+  /* Gradient text utility */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #F5A01A 0%, #E06020 50%, #C2305A 100%);
+  }
+
+  /* Brand gradient background */
+  .bg-brand-gradient {
+    background-image: linear-gradient(135deg, #F5A01A 0%, #E06020 40%, #C2305A 100%);
+  }
+
+  /* Subtle brand gradient background */
+  .bg-brand-subtle {
+    background: linear-gradient(135deg, #FFF8F2 0%, #FFF0F5 100%);
+  }
+
+  /* Section divider using brand gradient */
+  .brand-divider {
+    height: 3px;
+    background-image: linear-gradient(90deg, #F5A01A, #C2305A);
+    border-radius: 999px;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Nav link underline animation */
+  .nav-link {
+    @apply relative text-stone-600 hover:text-stone-900 font-medium transition-colors duration-200;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300;
+    background-image: linear-gradient(90deg, #F5A01A, #C2305A);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  .nav-link.active {
+    @apply text-stone-900;
+  }
+
+  /* Tag badge */
+  .tag {
+    @apply inline-block text-xs font-medium px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-700;
+  }
+
+  /* Award badge */
+  .award-badge {
+    @apply inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full;
+    background: linear-gradient(135deg, #FFF5E0, #FFE0E8);
+    color: #9E1B44;
+    border: 1px solid #F5C0C8;
+  }
+
+  /* Section title */
+  .section-title {
+    @apply text-3xl font-bold text-stone-900 tracking-tight;
+  }
+
+  /* Section subtitle */
+  .section-subtitle {
+    @apply text-stone-500 mt-2 text-base;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:shadow-md active:scale-95;
+    background-image: linear-gradient(135deg, #F5A01A 0%, #C2305A 100%);
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-stone-700 bg-white border border-stone-200 transition-all duration-200 hover:bg-stone-50 hover:border-stone-300 active:scale-95;
+  }
+}
+
+/* Publication list item animation */
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease forwards;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
