@@ -19,10 +19,10 @@ export const LAB = {
   // 사진이 1장 이상 있으면 → 왼쪽 텍스트 + 오른쪽 슬라이드쇼 레이아웃
   // 빈 배열 [] → 텍스트 중앙 정렬 유지
   heroPhotos: [
-    "/sigchi.png",
-    "/people/sangeunseo.jpg",
-    "/people/jiminlee.png",
-    "/people/jumikim.jpeg",
+    // "/sigchi.png",
+    // "/people/sangeunseo.jpg",
+    // "/people/jiminlee.png",
+    // "/people/jumikim.jpeg",
     // "/hero2.jpg",  ← 사진 추가할 때마다 여기에 한 줄씩
   ],
 };
@@ -70,7 +70,7 @@ export const MEMBERS: Member[] = [
     website: "https://sangeunseo.com",
     email: "sangeunseo@postech.ac.kr",
     startYear: 2026,
-    photo: "/people/sangeunseo.jpg",
+    photo: "/people/sangeunseo_profile_square.jpg",
   },
   {
     id: "jimin-lee",
