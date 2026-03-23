@@ -227,18 +227,6 @@ export const PUBLICATIONS: Publication[] = [
     doi: "https://dl.acm.org/doi/10.1145/3313831.3376359",
     tags: ["Parenting", "Self-Tracking", "Co-design"],
   },
-  // Student publications
-  {
-    id: "pub-dis2024",
-    title:
-      "Exploring Intervention Techniques to Alleviate Negative Emotions during Video Content Moderation Tasks as a Worker-centered Task Design",
-    authors: "Dokyun Lee, Sangeun Seo, Chanwoo Park, Sunjun Kim, Buru Chang, Jean Y Song",
-    venue: "ACM Designing Interactive Systems Conference",
-    venueShort: "DIS 2024",
-    year: 2024,
-    type: "conference",
-    tags: ["Content Moderation", "Worker Well-being", "Intervention Design"],
-  },
 ];
 
 // ============================================================
@@ -275,13 +263,6 @@ export const NEWS: NewsItem[] = [
     category: "paper",
     content: "Paper accepted at CHI 2025 — \"Understanding Public Agencies' Expectations and Realities of AI-Driven Chatbots for Public Health Monitoring\"",
     link: "https://doi.org/10.1145/3706598.3714080",
-  },
-  {
-    id: "news-4",
-    date: "2024-07",
-    category: "paper",
-    content: "Sangeun's paper as a second author accepted at DIS 2024 — \"Exploring Intervention Techniques to Alleviate Negative Emotions during Video Content Moderation Tasks\"",
-    link: "https://doi.org/10.1145/3643834.3660708",
   },
   {
     id: "news-5",
