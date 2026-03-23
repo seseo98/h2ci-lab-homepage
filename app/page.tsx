@@ -14,9 +14,9 @@ export default function HomePage() {
   const recentNews = [...NEWS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
 
   return (
-    <div className="overflow-x-hidden">
+    <div>
       {/* ── Hero ────────────────────────────────────────────── */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden -mt-16">
         {/* 그라디언트 배경 — 항상 유지 */}
         <div className="absolute inset-0 bg-brand-gradient opacity-[0.92]" />
 
