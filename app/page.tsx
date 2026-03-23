@@ -1,6 +1,4 @@
-import Link from "next/link";
-import { MEMBERS, PUBLICATIONS, RESEARCH_AREAS, NEWS, CATEGORY_LABEL, CATEGORY_COLOR, LAB } from "@/lib/data";
-import MemberAvatar from "@/components/MemberAvatar";
+import { PUBLICATIONS, RESEARCH_AREAS, NEWS, CATEGORY_LABEL, CATEGORY_COLOR, LAB } from "@/lib/data";
 import HeroCarousel from "@/components/HeroCarousel";
 
 function formatDate(d: string) {
@@ -59,26 +57,11 @@ export default function HomePage() {
                 Health &amp; Human-Computer Interaction Lab
               </p>
 
-              <p className="text-base sm:text-lg text-white/70 leading-relaxed mb-10 max-w-2xl">
+              <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl">
                 We investigate how technology can better support health monitoring,
                 communication, and care — bridging the gap between HCI research and
                 real-world healthcare systems.
               </p>
-
-              <div className={`flex flex-wrap gap-4 ${LAB.heroPhotos.length === 0 && "justify-center sm:justify-start"}`}>
-                <Link href="/research" className="btn-primary bg-white text-stone-800 hover:bg-white/90" style={{ backgroundImage: "none" }}>
-                  Our Research
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-                <Link href="/publications" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white border border-white/30 hover:bg-white/10 transition-all duration-200">
-                  Publications
-                </Link>
-                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white border border-white/30 hover:bg-white/10 transition-all duration-200">
-                  Join Us
-                </Link>
-              </div>
             </div>
 
             {/* ── 슬라이드쇼 (사진 있을 때만 표시) ── */}
@@ -96,125 +79,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Research Areas ────────────────────────────────────── */}
-      <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <div className="brand-divider w-10 mx-auto mb-4" />
-            <h2 className="section-title">Research Areas</h2>
-            <p className="section-subtitle max-w-xl mx-auto">
-              At the intersection of health, technology, and human experience
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-            {RESEARCH_AREAS.map((area) => (
-              <div
-                key={area.title}
-                className="card-hover bg-white rounded-2xl p-7 border border-stone-100 shadow-sm group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-brand-subtle flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform duration-200">
-                  {area.icon}
-                </div>
-                <h3 className="font-bold text-stone-900 text-lg mb-3">{area.title}</h3>
-                <p className="text-stone-500 text-sm leading-relaxed mb-4">{area.description}</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {area.tags.map((tag) => (
-                    <span key={tag} className="tag">{tag}</span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Link href="/research" className="btn-secondary">
-              Explore Our Research
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Recent Publications ───────────────────────────────── */}
-      <section className="py-24 bg-stone-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
-            <div>
-              <div className="brand-divider w-10 mb-4" />
-              <h2 className="section-title">Recent Publications</h2>
-              <p className="section-subtitle">Selected work from the H2CI Lab</p>
-            </div>
-            <Link href="/publications" className="btn-secondary text-sm">
-              View All
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-
-          <div className="space-y-4">
-            {recentPubs.map((pub, i) => (
-              <div
-                key={pub.id}
-                className="card-hover bg-white rounded-xl p-6 border border-stone-100 shadow-sm flex gap-5 items-start"
-                style={{ animationDelay: `${i * 80}ms` }}
-              >
-                {/* Year badge */}
-                <div className="flex-shrink-0 text-center">
-                  <span className="text-xs font-bold text-orange-500 bg-orange-50 px-2.5 py-1 rounded-lg block whitespace-nowrap">
-                    {pub.venueShort}
-                  </span>
-                  <span className="text-xs text-stone-400 mt-1 block">{pub.year}</span>
-                </div>
-
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-start gap-2 flex-wrap mb-1">
-                    {pub.award && (
-                      <span className="award-badge flex-shrink-0">
-                        🏆 {pub.award}
-                      </span>
-                    )}
-                  </div>
-                  <h4 className="font-semibold text-stone-900 text-base leading-snug mb-1.5">
-                    {pub.doi ? (
-                      <a
-                        href={pub.doi}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-orange-600 transition-colors"
-                      >
-                        {pub.title}
-                      </a>
-                    ) : (
-                      pub.title
-                    )}
-                  </h4>
-                  <p className="text-stone-500 text-sm">{pub.authors}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── News ─────────────────────────────────────────────── */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
-            <div>
-              <div className="brand-divider w-10 mb-4" />
-              <h2 className="section-title">Latest News</h2>
-              <p className="section-subtitle">Papers, awards &amp; lab updates</p>
-            </div>
-            <Link href="/news" className="btn-secondary text-sm">
-              All News
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+          <div className="mb-12">
+            <div className="brand-divider w-10 mb-4" />
+            <h2 className="section-title">Latest News</h2>
+            <p className="section-subtitle">Papers, awards &amp; lab updates</p>
           </div>
 
           <div className="space-y-3">
@@ -244,57 +115,80 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── People Preview ─────────────────────────────────────── */}
+      {/* ── Recent Publications ───────────────────────────────── */}
+      <section className="py-24 bg-stone-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12">
+            <div className="brand-divider w-10 mb-4" />
+            <h2 className="section-title">Recent Publications</h2>
+            <p className="section-subtitle">Selected work from the H2CI Lab</p>
+          </div>
+
+          <div className="space-y-4">
+            {recentPubs.map((pub, i) => (
+              <div
+                key={pub.id}
+                className="card-hover bg-white rounded-xl p-6 border border-stone-100 shadow-sm flex gap-5 items-start"
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
+                <div className="flex-shrink-0 text-center">
+                  <span className="text-xs font-bold text-orange-500 bg-orange-50 px-2.5 py-1 rounded-lg block whitespace-nowrap">
+                    {pub.venueShort}
+                  </span>
+                  <span className="text-xs text-stone-400 mt-1 block">{pub.year}</span>
+                </div>
+
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start gap-2 flex-wrap mb-1">
+                    {pub.award && (
+                      <span className="award-badge flex-shrink-0">
+                        🏆 {pub.award}
+                      </span>
+                    )}
+                  </div>
+                  <h4 className="font-semibold text-stone-900 text-base leading-snug mb-1.5">
+                    {pub.doi ? (
+                      <a href={pub.doi} target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 transition-colors">
+                        {pub.title}
+                      </a>
+                    ) : pub.title}
+                  </h4>
+                  <p className="text-stone-500 text-sm">{pub.authors}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Research Areas ────────────────────────────────────── */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="brand-divider w-10 mx-auto mb-4" />
-            <h2 className="section-title">Our Team</h2>
-            <p className="section-subtitle">
-              Researchers passionate about health technology and human-centered design
+            <h2 className="section-title">Research Areas</h2>
+            <p className="section-subtitle max-w-xl mx-auto">
+              At the intersection of health, technology, and human experience
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-            {MEMBERS.map((member) => (
-              <div key={member.id} className="text-center group">
-                <div className="card-hover rounded-2xl p-5 border border-stone-100">
-                  <MemberAvatar member={member} size="lg" className="mx-auto mb-4" />
-                  <h4 className="font-semibold text-stone-900 text-sm">{member.name}</h4>
-                  <p className="text-xs text-stone-500 mt-0.5">{member.roleLabel}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+            {RESEARCH_AREAS.map((area) => (
+              <div key={area.title} className="card-hover bg-white rounded-2xl p-7 border border-stone-100 shadow-sm group">
+                <div className="w-12 h-12 rounded-xl bg-brand-subtle flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform duration-200">
+                  {area.icon}
+                </div>
+                <h3 className="font-bold text-stone-900 text-lg mb-3">{area.title}</h3>
+                <p className="text-stone-500 text-sm leading-relaxed mb-4">{area.description}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {area.tags.map((tag) => (
+                    <span key={tag} className="tag">{tag}</span>
+                  ))}
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-10">
-            <Link href="/people" className="btn-secondary">
-              Meet the Team
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Join Us CTA ──────────────────────────────────────── */}
-      <section className="py-20 bg-brand-subtle">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="brand-divider w-10 mx-auto mb-6" />
-          <h2 className="text-3xl sm:text-4xl font-bold text-stone-900 mb-4">
-            Interested in Joining?
-          </h2>
-          <p className="text-stone-500 text-lg leading-relaxed mb-8">
-            We are looking for motivated graduate and undergraduate students who are
-            passionate about health technology and human-centered research.
-          </p>
-          <Link href="/contact" className="btn-primary">
-            Get in Touch
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </Link>
         </div>
       </section>
     </div>
