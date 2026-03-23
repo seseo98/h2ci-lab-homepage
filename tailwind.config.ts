@@ -10,9 +10,9 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          orange: "#F5A01A",
-          red: "#C2305A",
-          crimson: "#9E1B44",
+          orange: "#F6A700",
+          red: "#A61955",
+          crimson: "#A61955",
           light: "#FFF5EE",
           soft: "#FFF8F3",
         },
@@ -21,7 +21,7 @@ const config: Config = {
         sans: ["Inter", "system-ui", "sans-serif"],
       },
       backgroundImage: {
-        "brand-gradient": "linear-gradient(135deg, #F5A01A 0%, #E06020 50%, #C2305A 100%)",
+        "brand-gradient": "linear-gradient(90deg, #F6A700 0%, #CE602A 35%, #A61955 100%)",
         "brand-gradient-subtle": "linear-gradient(135deg, #FFF5EE 0%, #FFF0F5 100%)",
       },
     },
