@@ -31,7 +31,7 @@ export interface Member {
   id: string;
   name: string;
   nameKr: string;
-  role: "pi" | "phd" | "ms" | "undergrad" | "alumni";
+  role: "pi" | "phd" | "ms" | "undergrad" | "intern" | "alumni";
   roleLabel: string;
   affiliation: string;
   bio: string;
@@ -85,6 +85,19 @@ export const MEMBERS: Member[] = [
     email: "leejm21@postech.ac.kr",
     startYear: 2026,
     photo: "/people/jiminlee.png",
+  },
+  {
+    id: "nara-lee",
+    name: "Nara Lee",
+    nameKr: "이나라",
+    role: "intern",
+    roleLabel: "Intern",
+    affiliation: "POSTECH",
+    bio: "",
+    research: [],
+    email: "02leenara@postech.ac.kr",
+    startYear: 2026,
+    photo: "/people/naralee.jpeg",
   },
   {
     id: "jumi-kim",
