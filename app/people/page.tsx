@@ -108,7 +108,7 @@ export default function PeoplePage() {
                 >
                   {c.name}
                 </a>
-                <span className="text-stone-400">, {c.affiliation}</span>
+                <span className="text-stone-400">&nbsp;&nbsp;{c.affiliation}</span>
               </li>
             ))}
           </ul>
