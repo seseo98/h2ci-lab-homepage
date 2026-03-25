@@ -120,7 +120,7 @@ export const MEMBERS: Member[] = [
     roleLabel: "M.S. Student",
     affiliation: "Dept. of CSE, POSTECH",
     bio: "I'm interested in Digital Wellbeing — specifically how we can better design and utilize Digital Self-Control Tools (DSCTs). Through human-centered computing, I hope to build systems that genuinely empower people to form healthier relationships with their devices.",
-    research: ["Digital Wellbeing", "Self-Control Tools", "Human-Centered Computing"],
+    research: ["Digital Wellbeing", "Self-Control Tools"],
     website: "https://jglosa.github.io",
     email: "glosajumi@postech.ac.kr",
     startYear: 2026,
@@ -308,7 +308,7 @@ export const NEWS: NewsItem[] = [
     date: "2025-07",
     category: "misc",
     title: "Dr. Jo joins POSTECH",
-    content: "Prof. Eunkyung Jo has joined POSTECH as an Assistant Professor in the Department of Computer Science and Engineering and the Graduate School of Artificial Intelligence.",
+    content: "Dr. Jo has joined POSTECH as an Assistant Professor in the Department of Computer Science and Engineering and the Graduate School of Artificial Intelligence.",
     link: "https://cse.postech.ac.kr/csepostech/news/new.do?mode=view&articleNo=24587&title=%EC%A1%B0%EC%9D%80%EA%B2%BD+%EA%B5%90%EC%88%98+%EB%B6%80%EC%9E%84",
   },
 ];
