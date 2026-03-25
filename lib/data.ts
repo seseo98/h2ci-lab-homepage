@@ -333,25 +333,25 @@ export const CATEGORY_COLOR: Record<NewsCategory, string> = {
 
 export const RESEARCH_AREAS = [
   {
-    icon: "🩺",
-    title: "Health Monitoring Technology",
+    icon: "🌱",
+    title: "Technology for Wellbeing",
     description:
-      "Examining how health monitoring tools work in clinical and public health contexts — understanding stakeholder needs, challenges, and designing for infrastructural complexity.",
-    tags: ["Clinical Systems", "Public Health", "Field Deployments"],
+      "Designing and evaluating technologies that support the physical and mental wellbeing of individuals and families.",
+    tags: [],
   },
   {
-    icon: "🤖",
-    title: "Conversational AI for Health",
+    icon: "🫂",
+    title: "Social Isolation",
     description:
-      "Designing and evaluating LLM-powered chatbots for mental health, chronic care, and public health interventions — with focus on safety, ethics, and real-world effectiveness.",
-    tags: ["LLMs", "Mental Health", "Chatbot Design"],
+      "Investigating technological interventions and monitoring systems for individuals experiencing social isolation.",
+    tags: [],
   },
   {
-    icon: "👥",
-    title: "Sociotechnical Systems",
+    icon: "💬",
+    title: "AI-Mediated Health Communication",
     description:
-      "Understanding how social contexts shape technology use in health care — from caregiver-patient communication to clinician decision support and digital wellbeing.",
-    tags: ["CSCW", "Caregiving", "Digital Wellbeing"],
+      "Exploring trust, self-disclosure, and patient-centered interaction in AI-mediated health communication.",
+    tags: [],
   },
 ];
 

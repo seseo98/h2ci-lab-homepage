@@ -109,19 +109,12 @@ export default function HomePage() {
             <h2 className="section-title">Research Areas</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {RESEARCH_AREAS.map((area) => (
-              <div key={area.title} className="card-hover bg-white rounded-2xl p-7 border border-stone-100 shadow-sm group">
-                <div className="w-12 h-12 rounded-xl bg-brand-subtle flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform duration-200">
-                  {area.icon}
-                </div>
+              <div key={area.title} className="text-center">
+                <div className="text-5xl mb-5">{area.icon}</div>
                 <h3 className="font-bold text-stone-900 text-lg mb-3">{area.title}</h3>
-                <p className="text-stone-500 text-sm leading-relaxed mb-4">{area.description}</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {area.tags.map((tag) => (
-                    <span key={tag} className="tag">{tag}</span>
-                  ))}
-                </div>
+                <p className="text-stone-500 text-sm leading-relaxed">{area.description}</p>
               </div>
             ))}
           </div>
