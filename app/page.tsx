@@ -43,19 +43,31 @@ export default function HomePage() {
             <div className="space-y-6 pb-4">
               {recentNews.map((item, i) => {
                 const isLeft = i % 2 === 0;
+                const gradient = isLeft ? CARD_GRADIENT_LEFT : CARD_GRADIENT_RIGHT;
+                const align = isLeft ? "text-right" : "text-left";
+                const cardInner = (
+                  <div className="bg-white rounded-[10px] px-5 py-4">
+                    <p className={`text-stone-900 text-sm font-bold leading-snug mb-1 ${align}`}>{item.title}</p>
+                    <p className={`text-stone-600 text-xs leading-relaxed ${align}`}>{item.content}</p>
+                    <p className={`text-stone-400 text-xs mt-1.5 ${align}`}>{formatDate(item.date)}</p>
+                  </div>
+                );
+                const cardWrapper = item.link ? (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer"
+                    className="block p-[2px] rounded-xl transition-opacity hover:opacity-80 cursor-pointer"
+                    style={{ background: gradient }}>
+                    {cardInner}
+                  </a>
+                ) : (
+                  <div className="p-[2px] rounded-xl" style={{ background: gradient }}>
+                    {cardInner}
+                  </div>
+                );
                 return (
                   <div key={item.id} className="flex items-start w-full">
                     {isLeft ? (
                       <>
-                        <div className="w-[45%]">
-                          <div className="p-px rounded-xl" style={{ background: CARD_GRADIENT_LEFT }}>
-                            <div className="bg-white rounded-xl px-5 py-4">
-                              <p className="text-stone-900 text-sm font-bold leading-snug mb-1 text-right">{item.title}</p>
-                              <p className="text-stone-600 text-xs leading-relaxed text-right">{item.content}</p>
-                              <p className="text-stone-400 text-xs mt-1.5 text-right">{formatDate(item.date)}</p>
-                            </div>
-                          </div>
-                        </div>
+                        <div className="w-[45%]">{cardWrapper}</div>
                         <div className="w-[5%] pt-6 flex items-center">
                           <div className="w-full h-0.5" style={{ backgroundColor: TIMELINE_COLOR }} />
                         </div>
@@ -67,15 +79,7 @@ export default function HomePage() {
                         <div className="w-[5%] pt-6 flex items-center">
                           <div className="w-full h-0.5" style={{ backgroundColor: TIMELINE_COLOR }} />
                         </div>
-                        <div className="w-[45%]">
-                          <div className="p-px rounded-xl" style={{ background: CARD_GRADIENT_RIGHT }}>
-                            <div className="bg-white rounded-xl px-5 py-4">
-                              <p className="text-stone-900 text-sm font-bold leading-snug mb-1 text-left">{item.title}</p>
-                              <p className="text-stone-600 text-xs leading-relaxed text-left">{item.content}</p>
-                              <p className="text-stone-400 text-xs mt-1.5 text-left">{formatDate(item.date)}</p>
-                            </div>
-                          </div>
-                        </div>
+                        <div className="w-[45%]">{cardWrapper}</div>
                       </>
                     )}
                   </div>

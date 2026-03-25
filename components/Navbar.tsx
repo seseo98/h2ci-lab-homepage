@@ -105,7 +105,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`nav-link pb-0.5 text-lg font-semibold ${isActive && !isTransparent ? "active" : ""} ${
+                  className={`nav-link pb-0.5 text-lg font-semibold font-rajdhani ${isActive && !isTransparent ? "active" : ""} ${
                     isTransparent ? "!text-white/80 hover:!text-white" : ""
                   }`}
                 >
@@ -143,7 +143,7 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                    className={`px-3 py-2.5 rounded-lg text-sm font-medium font-rajdhani transition-colors ${
                       isTransparent
                         ? isActive ? "text-white bg-white/20" : "text-white/80 hover:text-white hover:bg-white/10"
                         : isActive ? "text-orange-600 bg-orange-50" : "text-stone-600 hover:text-stone-900 hover:bg-stone-50"

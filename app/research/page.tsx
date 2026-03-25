@@ -15,7 +15,7 @@ export default function ResearchPage() {
         {/* Page header */}
         <div className="mb-16">
           <div className="brand-divider w-10 mb-5" />
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-stone-900 tracking-tight mb-3">
+          <h1 className="font-rajdhani text-4xl sm:text-5xl font-extrabold text-stone-900 tracking-tight mb-3">
             Research
           </h1>
         </div>

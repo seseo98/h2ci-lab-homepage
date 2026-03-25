@@ -17,22 +17,31 @@ const CARD_GRADIENT_LEFT  = "linear-gradient(90deg, #F6A700, #CE602A, #A61955)";
 const CARD_GRADIENT_RIGHT = "linear-gradient(90deg, #A61955, #CE602A, #F6A700)";
 
 function NewsCard({ item, isLeft }: { item: (typeof NEWS)[number]; isLeft: boolean }) {
-  return (
-    <div className="p-px rounded-xl" style={{ background: isLeft ? CARD_GRADIENT_LEFT : CARD_GRADIENT_RIGHT }}>
-      <div className="bg-white rounded-xl">
-        {/* Content */}
-        <div className="px-6 py-5">
-          <p className={`text-stone-900 text-base font-bold leading-snug mb-2 ${isLeft ? "text-right" : "text-left"}`}>
-            {item.title}
-          </p>
-          <p className={`text-stone-600 text-sm leading-relaxed ${isLeft ? "text-right" : "text-left"}`}>
-            {item.content}
-          </p>
-          <p className={`text-stone-400 text-xs mt-2 ${isLeft ? "text-right" : "text-left"}`}>
-            {formatDate(item.date)}
-          </p>
-        </div>
+  const inner = (
+    <div className="bg-white rounded-[10px]">
+      <div className="px-6 py-5">
+        <p className={`text-stone-900 text-base font-bold leading-snug mb-2 ${isLeft ? "text-right" : "text-left"}`}>
+          {item.title}
+        </p>
+        <p className={`text-stone-600 text-sm leading-relaxed ${isLeft ? "text-right" : "text-left"}`}>
+          {item.content}
+        </p>
+        <p className={`text-stone-400 text-xs mt-2 ${isLeft ? "text-right" : "text-left"}`}>
+          {formatDate(item.date)}
+        </p>
       </div>
+    </div>
+  );
+
+  const wrapper = "block p-[2px] rounded-xl transition-opacity" + (item.link ? " cursor-pointer hover:opacity-80" : "");
+
+  return item.link ? (
+    <a href={item.link} target="_blank" rel="noopener noreferrer" className={wrapper} style={{ background: isLeft ? CARD_GRADIENT_LEFT : CARD_GRADIENT_RIGHT }}>
+      {inner}
+    </a>
+  ) : (
+    <div className={wrapper} style={{ background: isLeft ? CARD_GRADIENT_LEFT : CARD_GRADIENT_RIGHT }}>
+      {inner}
     </div>
   );
 }
@@ -47,7 +56,7 @@ export default function NewsPage() {
         {/* Page header */}
         <div className="mb-16 text-center">
           <div className="brand-divider w-24 mb-5 mx-auto" />
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-stone-900 tracking-tight">
+          <h1 className="font-rajdhani text-4xl sm:text-5xl font-extrabold text-stone-900 tracking-tight">
             News
           </h1>
         </div>

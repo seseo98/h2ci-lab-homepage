@@ -30,7 +30,7 @@ export default function PeoplePage() {
         {/* Page header */}
         <div className="mb-8 text-center">
           <div className="brand-divider w-24 mb-5 mx-auto" />
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-stone-900 tracking-tight">
+          <h1 className="font-rajdhani text-4xl sm:text-5xl font-extrabold text-stone-900 tracking-tight">
             People
           </h1>
         </div>

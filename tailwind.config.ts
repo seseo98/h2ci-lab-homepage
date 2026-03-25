@@ -19,6 +19,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        rajdhani: ["Rajdhani", "sans-serif"],
       },
       backgroundImage: {
         "brand-gradient": "linear-gradient(90deg, #F6A700 0%, #CE602A 40%, #A61955 100%)",

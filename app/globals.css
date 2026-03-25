@@ -76,10 +76,10 @@
 
   /* Award badge */
   .award-badge {
-    @apply inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full;
-    background: linear-gradient(135deg, #FFF5E0, #FFE0E8);
-    color: #9E1B44;
-    border: 1px solid #F5C0C8;
+    @apply inline-block text-sm font-semibold px-2.5 py-0.5 rounded-md;
+    background: #ffffff;
+    color: #1c1917;
+    border: 1.5px solid #A61955;
   }
 
   /* Section title */

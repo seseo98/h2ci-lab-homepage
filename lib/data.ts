@@ -152,7 +152,7 @@ export const PUBLICATIONS: Publication[] = [
     venueShort: "CHI 2025",
     year: 2025,
     type: "conference",
-    doi: "https://doi.org/10.1145/3706598.3714080",
+    doi: "https://dl.acm.org/doi/full/10.1145/3706598.3713593",
     tags: ["Conversational AI", "Public Health", "Chatbots"],
   },
   {
@@ -165,7 +165,7 @@ export const PUBLICATIONS: Publication[] = [
     venueShort: "CSCW 2024",
     year: 2024,
     type: "journal",
-    doi: "https://dl.acm.org/doi/10.1145/3637407",
+    doi: "https://dl.acm.org/doi/10.1145/3686997",
     tags: ["Clinical Communication", "Patient-Generated Data", "Health Tracking"],
   },
   {
@@ -189,7 +189,7 @@ export const PUBLICATIONS: Publication[] = [
     venueShort: "JMIR MH 2023",
     year: 2023,
     type: "journal",
-    doi: "https://mental.jmir.org/2023/1/e46862",
+    doi: "https://mental.jmir.org/2023/1/e49684",
     tags: ["Teletherapy", "Mental Health Apps", "Ethics"],
   },
   {
@@ -215,7 +215,7 @@ export const PUBLICATIONS: Publication[] = [
     venueShort: "CHI 2022",
     year: 2022,
     type: "conference",
-    doi: "https://dl.acm.org/doi/10.1145/3491102.3501912",
+    doi: "https://dl.acm.org/doi/10.1145/3491102.3502206",
     tags: ["Clinical Decision Support", "Psychiatric Care", "Longitudinal Health"],
   },
   {
@@ -228,7 +228,7 @@ export const PUBLICATIONS: Publication[] = [
     venueShort: "CSCW 2022",
     year: 2022,
     type: "journal",
-    doi: "https://dl.acm.org/doi/10.1145/3512906",
+    doi: "https://dl.acm.org/doi/10.1145/3512939",
     tags: ["Autism", "Caregiver Technology", "Data-Driven Intervention"],
   },
   {
@@ -241,7 +241,7 @@ export const PUBLICATIONS: Publication[] = [
     venueShort: "CSCW 2020",
     year: 2020,
     type: "journal",
-    doi: "https://dl.acm.org/doi/10.1145/3392860",
+    doi: "https://dl.acm.org/doi/10.1145/3392876",
     tags: ["Family Technology", "Mealtime", "Automated Tracking"],
   },
   {
@@ -285,7 +285,8 @@ export const NEWS: NewsItem[] = [
     date: "2026-02",
     category: "award",
     title: "🏆 2026 ACM SIGCHI Outstanding Dissertation Award",
-    content: "Prof. Eunkyung Jo has been recognized with the ACM SIGCHI Outstanding Dissertation Award.",
+    content: "Dr. Jo has been recognized with the ACM SIGCHI Outstanding Dissertation Award.",
+    link: "https://medium.com/sigchi/2026-acm-sigchi-awards-and-special-recognitions-d942983d9228",
   },
   {
     id: "news-3",
@@ -300,6 +301,7 @@ export const NEWS: NewsItem[] = [
     category: "misc",
     title: "CHI 2026 Associate Chair",
     content: "Dr. Jo served as an Associate Chair for the Understanding People — Qualitative Methods Subcommittee at CHI 2026.",
+    link: "https://chi2026.acm.org/authors/papers/selecting-a-subcommittee/#understanding_qualitative",
   },
   {
     id: "news-4",
@@ -307,6 +309,7 @@ export const NEWS: NewsItem[] = [
     category: "misc",
     title: "Dr. Jo joins POSTECH",
     content: "Prof. Eunkyung Jo has joined POSTECH as an Assistant Professor in the Department of Computer Science and Engineering and the Graduate School of Artificial Intelligence.",
+    link: "https://cse.postech.ac.kr/csepostech/news/new.do?mode=view&articleNo=24587&title=%EC%A1%B0%EC%9D%80%EA%B2%BD+%EA%B5%90%EC%88%98+%EB%B6%80%EC%9E%84",
   },
 ];
 
