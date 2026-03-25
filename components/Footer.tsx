@@ -1,13 +1,12 @@
-import Link from "next/link";
 import { LAB } from "@/lib/data";
 
 export default function Footer() {
   return (
     <footer className="bg-stone-900 text-stone-400 mt-auto">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Lab info */}
-          <div className="col-span-1 md:col-span-1">
+          <div className="col-span-1">
             <h3 className="text-white font-bold text-lg mb-2">H2CI Lab</h3>
             <p className="text-sm text-stone-400 leading-relaxed mb-4">
               Health and Human-Computer Interaction Lab
@@ -18,31 +17,6 @@ export default function Footer() {
               <br />
               {LAB.affiliation}
             </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
-              Navigation
-            </h4>
-            <ul className="space-y-2 text-sm">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/research", label: "Research" },
-                { href: "/people", label: "People" },
-                { href: "/publications", label: "Publications" },
-                { href: "/contact", label: "Contact & Join Us" },
-              ].map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-stone-400 hover:text-orange-400 transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Contact */}

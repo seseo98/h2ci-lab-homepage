@@ -137,38 +137,40 @@ export default function HomePage() {
           </div>
 
           <div className="space-y-4">
-            {recentPubs.map((pub, i) => (
-              <div
-                key={pub.id}
-                className="card-hover bg-white rounded-xl p-6 border border-stone-100 shadow-sm flex gap-5 items-start"
-                style={{ animationDelay: `${i * 80}ms` }}
-              >
-                <div className="flex-shrink-0 text-center">
-                  <span className="text-xs font-bold text-orange-500 bg-orange-50 px-2.5 py-1 rounded-lg block whitespace-nowrap">
-                    {pub.venueShort}
-                  </span>
-                  <span className="text-xs text-stone-400 mt-1 block">{pub.year}</span>
-                </div>
-
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-start gap-2 flex-wrap mb-1">
-                    {pub.award && (
-                      <span className="award-badge flex-shrink-0">
-                        🏆 {pub.award}
-                      </span>
-                    )}
+            {recentPubs.map((pub) => {
+              const CardTag = pub.doi ? "a" : "div";
+              const cardProps = pub.doi
+                ? { href: pub.doi, target: "_blank", rel: "noopener noreferrer" }
+                : {};
+              return (
+                <CardTag
+                  key={pub.id}
+                  {...(cardProps as object)}
+                  className={`block bg-white rounded-xl p-6 border border-stone-100 shadow-sm transition-all duration-200 ${
+                    pub.doi ? "hover:shadow-md hover:-translate-y-0.5 cursor-pointer" : ""
+                  }`}
+                >
+                  {pub.award && (
+                    <div className="mb-3">
+                      <span className="award-badge">🏆 {pub.award}</span>
+                    </div>
+                  )}
+                  <div className="mb-2">
+                    <span
+                      className="inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md text-white"
+                      style={{ backgroundColor: pub.type === "conference" ? "#F6A700CC" : "#A61955CC" }}
+                    >
+                      {pub.type}
+                    </span>
                   </div>
-                  <h4 className="font-semibold text-stone-900 text-base leading-snug mb-1.5">
-                    {pub.doi ? (
-                      <a href={pub.doi} target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 transition-colors">
-                        {pub.title}
-                      </a>
-                    ) : pub.title}
+                  <h4 className="font-bold text-stone-900 text-base leading-snug mb-2">
+                    {pub.title}
                   </h4>
-                  <p className="text-stone-500 text-sm">{pub.authors}</p>
-                </div>
-              </div>
-            ))}
+                  <p className="text-stone-500 text-sm mb-2">{pub.authors}</p>
+                  <p className="text-sm italic font-medium text-stone-700">{pub.venue}</p>
+                </CardTag>
+              );
+            })}
           </div>
         </div>
       </section>

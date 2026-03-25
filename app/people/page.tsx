@@ -118,7 +118,7 @@ export default function PeoplePage() {
                   href={c.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-stone-900 hover:text-orange-600 transition-colors"
+                  className="font-semibold text-stone-900 inline-block transition-transform duration-200 hover:-translate-y-0.5"
                 >
                   {c.name}
                 </a>

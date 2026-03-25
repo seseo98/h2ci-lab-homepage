@@ -52,7 +52,7 @@ export const MEMBERS: Member[] = [
     roleLabel: "Principal Investigator",
     affiliation: "Assistant Professor, Dept. of CSE / GSAI, POSTECH",
     bio: "I research at the intersection of HCI, CSCW, and Health. My work examines how health monitoring technology can better account for the infrastructural complexity of clinical and public health care — through interviews, surveys, log analysis, system prototyping, and real-world field deployments.",
-    research: ["Professor"],
+    research: ["Assistant Professor"],
     website: "https://eunkyungjo.com",
     email: "eunkyungjo@postech.ac.kr",
     startYear: 2026,
