@@ -97,15 +97,6 @@ const THEMES = [
         award: null,
         image: "/research/ai_communication/memoryaware.jpg",
       },
-      {
-        type: "pub",
-        label: "CSCW 2024",
-        title: "Giving Patients a Voice in Clinical Data",
-        desc: "Digital symptom measures often fail to capture the full picture of a patient's experience. This research explores how patient-generated annotations — notes patients add to their own clinical data — can bridge the communication gap between patients and clinicians, enabling more personalized and collaborative care.",
-        link: "https://dl.acm.org/doi/10.1145/3686997",
-        award: null,
-        image: "/research/ai_communication/at_annotator.png",
-      },
     ],
   },
 ];
