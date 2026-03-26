@@ -66,7 +66,7 @@ export const MEMBERS: Member[] = [
     roleLabel: "Ph.D. Student",
     affiliation: "Dept. of CSE, POSTECH",
     bio: "I aim to support human well-being and meaningful learning in real-world contexts by bridging social computing and educational technology. Currently I focus on socially withdrawn youth — exploring how online communities can serve as a bridge back to society.",
-    research: ["Social Computing", "Educational Technology"],
+    research: ["Social Isolation", "Online Community Discourse"],
     website: "https://sangeunseo.com",
     email: "sangeunseo@postech.ac.kr",
     startYear: 2026,

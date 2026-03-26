@@ -48,8 +48,8 @@ const THEMES = [
       {
         type: "student",
         label: "Student Research",
-        title: "Digital Safety Net for the Isolated",
-        desc: "Combining AI-driven public health interventions with data-driven analysis of online community discourse, this research works to reconnect socially isolated individuals to support systems — from LLM-based check-in agents to NLP-powered insights into how marginalized youth express themselves in anonymous online spaces.",
+        title: "Micro-Bridges for Socially Isolated Youth",
+        desc: "Combining low-effort technical interventions with mixed-methods analysis of extreme online discourse, this research works to safely transition reclusive and socially isolated youth into healthier support networks. This effort ranges from NLP-driven insights into how marginalized individuals express themselves in anonymous spaces to privacy-preserving check-in widgets that foster daily micro-connections.",
         link: null,
         award: null,
         image: "/research/isloation/hikikomori.png",
