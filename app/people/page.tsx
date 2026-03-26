@@ -14,6 +14,7 @@ export default function PeoplePage() {
   const labPhotos = fs
     .readdirSync(labPhotoDir)
     .filter((f) => /\.(jpe?g|png|webp|gif)$/i.test(f))
+    .sort((a, b) => b.localeCompare(a))
     .map((f) => `/lab_photo/${f}`);
 
   const pi = MEMBERS.find((m) => m.role === "pi")!;

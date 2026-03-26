@@ -26,7 +26,7 @@ export default function LabPhotoCarousel({ photos }: Props) {
 
   return (
     <div>
-      <div className="relative w-full overflow-hidden bg-black rounded-2xl" style={{ aspectRatio: "4/3" }}>
+      <div className="relative w-full overflow-hidden bg-black rounded-2xl" style={{ aspectRatio: "3/2" }}>
         {/* Images */}
         {photos.map((src, i) => (
           // eslint-disable-next-line @next/next/no-img-element
