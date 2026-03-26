@@ -75,15 +75,15 @@ const THEMES = [
     ],
   },
   {
-    title: "AI-Mediated Health Communication",
+    title: "AI-Mediated Communication",
     description:
-      "Exploring trust, self-disclosure, and patient-centered interaction in AI-mediated health communication.",
+      "Exploring trust, self-disclosure, and patient-centered interaction in AI-mediated communication.",
     cards: [
       {
         type: "student",
         label: "Student Research",
-        title: "Designing AI That Truly Listens",
-        desc: "Can AI genuinely support people in moments that matter? This research explores how conversational AI systems can be designed to build trust, elicit honest self-disclosure, and make users feel heard — from real-world LLM chatbot deployments to the design of empathic conversational agents.",
+        title: "Effects of Non-verbal Empathy Expressions by AI Peer Counselling Avatars",
+        desc: "Nonverbal cues such as eye contact, facial expressions, and head-nodding are crucial for conveying empathy in counseling. This project explores how AI avatars can express empathy nonverbally in real time, and whether that shapes how emotionally supported users feel in the peer support context.",
         link: null,
         award: null,
         image: "/research/ai_communication/truelisten.png",

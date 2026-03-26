@@ -348,9 +348,9 @@ export const RESEARCH_AREAS = [
   },
   {
     icon: "💬",
-    title: "AI-Mediated Health Communication",
+    title: "AI-Mediated Communication",
     description:
-      "Exploring trust, self-disclosure, and patient-centered interaction in AI-mediated health communication.",
+      "Exploring trust, self-disclosure, and patient-centered interaction in AI-mediated communication.",
     tags: [],
   },
 ];
