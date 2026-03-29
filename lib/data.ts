@@ -148,7 +148,7 @@ export const PUBLICATIONS: Publication[] = [
     title:
       "Understanding Public Agencies' Expectations and Realities of AI-Driven Chatbots for Public Health Monitoring",
     authors: "Eunkyung Jo, Young-Ho Kim, Sang-Houn Ok, Daniel A. Epstein",
-    venue: "ACM CHI Conference on Human Factors in Computing Systems",
+    venue: "CHI 2025",
     venueShort: "CHI 2025",
     year: 2025,
     type: "conference",
@@ -161,7 +161,7 @@ export const PUBLICATIONS: Publication[] = [
       "Exploring Patient-Generated Annotations to Digital Clinical Symptom Measures for Patient-Centered Communication",
     authors:
       "Eunkyung Jo, Rachael Zehrung, Katherine E. Genuario, Alexandra Papoutsaki, Daniel A. Epstein",
-    venue: "Proceedings of the ACM on Human-Computer Interaction (CSCW)",
+    venue: "PACM Human-Computer Interaction 8 (CSCW2), 2024",
     venueShort: "CSCW 2024",
     year: 2024,
     type: "journal",
@@ -173,7 +173,7 @@ export const PUBLICATIONS: Publication[] = [
     title:
       "Understanding the Impact of Long-Term Memory on Self-Disclosure with Large Language Model-Driven Chatbots for Public Health Intervention",
     authors: "Eunkyung Jo, Yuin Jeong, SoHyun Park, Daniel A. Epstein, Young-Ho Kim",
-    venue: "ACM CHI Conference on Human Factors in Computing Systems",
+    venue: "CHI 2024",
     venueShort: "CHI 2024",
     year: 2024,
     type: "conference",
@@ -185,7 +185,7 @@ export const PUBLICATIONS: Publication[] = [
     title:
       "Exploring User Perspectives of and Ethical Experiences With Teletherapy Apps: Qualitative Analysis of User Reviews",
     authors: "Eunkyung Jo, Whitney-Jocelyn Kouaho, Stephen M. Schueller, Daniel A. Epstein",
-    venue: "JMIR Mental Health",
+    venue: "JMIR Mental Health, Vol 10, 2023",
     venueShort: "JMIR MH 2023",
     year: 2023,
     type: "journal",
@@ -197,7 +197,7 @@ export const PUBLICATIONS: Publication[] = [
     title:
       "Understanding the Benefits and Challenges of Deploying Conversational AI Leveraging Large Language Models for Public Health Intervention",
     authors: "Eunkyung Jo, Daniel A. Epstein, Hyunhoon Jung, Young-Ho Kim",
-    venue: "ACM CHI Conference on Human Factors in Computing Systems",
+    venue: "CHI 2023",
     venueShort: "CHI 2023",
     year: 2023,
     type: "conference",
@@ -211,7 +211,7 @@ export const PUBLICATIONS: Publication[] = [
       "Designing Flexible Longitudinal Regimens: Supporting Clinician Planning for Discontinuation of Psychiatric Drugs",
     authors:
       "Eunkyung Jo, Myeonghan Ryu, Georgia Kenderova, Samuel So, Bryan Shapiro, Alexandra Papoutsaki, Daniel A. Epstein",
-    venue: "ACM CHI Conference on Human Factors in Computing Systems",
+    venue: "CHI 2022",
     venueShort: "CHI 2022",
     year: 2022,
     type: "conference",
@@ -224,7 +224,7 @@ export const PUBLICATIONS: Publication[] = [
       "GeniAuti: Toward Data-Driven Interventions to Challenging Behaviors of Autistic Children through Caregivers' Tracking",
     authors:
       "Eunkyung Jo, Seora Park, Hyeonseok Bang, Youngeun Hong, Yeni Kim, Jungwon Choi, Bung Nyun Kim, Daniel A. Epstein, Hwajung Hong",
-    venue: "Proceedings of the ACM on Human-Computer Interaction (CSCW)",
+    venue: "PACM Human-Computer Interaction 6 (CSCW1), 2022",
     venueShort: "CSCW 2022",
     year: 2022,
     type: "journal",
@@ -237,7 +237,7 @@ export const PUBLICATIONS: Publication[] = [
       "MAMAS: Supporting Parent-Child Mealtime Interactions Using Automated Tracking and Speech Recognition",
     authors:
       "Eunkyung Jo, Hyeonseok Bang, Myeonghan Ryu, Eun Jee Sung, Sungmook Leem, Hwajung Hong",
-    venue: "Proceedings of the ACM on Human-Computer Interaction (CSCW)",
+    venue: "PACM Human-Computer Interaction 4 (CSCW1), 2020",
     venueShort: "CSCW 2020",
     year: 2020,
     type: "journal",
@@ -248,7 +248,7 @@ export const PUBLICATIONS: Publication[] = [
     id: "pub-chi2020",
     title: "Understanding Parenting Stress through Co-designed Self-Trackers",
     authors: "Eunkyung Jo, Austin L. Toombs, Colin M. Gray, Hwajung Hong",
-    venue: "ACM CHI Conference on Human Factors in Computing Systems",
+    venue: "CHI 2020",
     venueShort: "CHI 2020",
     year: 2020,
     type: "conference",

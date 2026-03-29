@@ -59,16 +59,6 @@ export default function PublicationsPage() {
                           </div>
                         )}
 
-                        {/* Type badge */}
-                        <div className="mb-2">
-                          <span
-                            className="inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md text-white"
-                            style={{ backgroundColor: pub.type === "conference" ? "#F6A700CC" : "#A61955CC" }}
-                          >
-                            {pub.type}
-                          </span>
-                        </div>
-
                         {/* Title */}
                         <h3 className="font-bold text-stone-900 leading-snug mb-2 text-base">
                           {pub.title}
