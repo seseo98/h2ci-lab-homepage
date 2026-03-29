@@ -49,10 +49,10 @@ export const MEMBERS: Member[] = [
     name: "Eunkyung Jo",
     nameKr: "조은경",
     role: "pi",
-    roleLabel: "Principal Investigator",
+    roleLabel: "Faculty",
     affiliation: "Assistant Professor, Dept. of CSE / GSAI, POSTECH",
     bio: "I research at the intersection of HCI, CSCW, and Health. My work examines how health monitoring technology can better account for the infrastructural complexity of clinical and public health care — through interviews, surveys, log analysis, system prototyping, and real-world field deployments.",
-    research: ["Assistant Professor"],
+    research: [],
     website: "https://eunkyungjo.com",
     email: "eunkyungjo@postech.ac.kr",
     startYear: 2026,
@@ -66,7 +66,7 @@ export const MEMBERS: Member[] = [
     roleLabel: "Ph.D. Student",
     affiliation: "Dept. of CSE, POSTECH",
     bio: "I aim to support human well-being and meaningful learning in real-world contexts by bridging social computing and educational technology. Currently I focus on socially withdrawn youth — exploring how online communities can serve as a bridge back to society.",
-    research: ["Social Isolation", "Online Community Discourse"],
+    research: ["Social Isolation Intervention", "Online Community Discourse"],
     website: "https://sangeunseo.com",
     email: "sangeunseo@postech.ac.kr",
     startYear: 2026,
@@ -104,7 +104,7 @@ export const MEMBERS: Member[] = [
     name: "Nara Lee",
     nameKr: "이나라",
     role: "intern",
-    roleLabel: "Intern",
+    roleLabel: "Undergraduate Intern",
     affiliation: "POSTECH",
     bio: "",
     research: [],
@@ -341,7 +341,7 @@ export const RESEARCH_AREAS = [
   },
   {
     icon: "🫂",
-    title: "Social Isolation",
+    title: "Social Isolation Intervention",
     description:
       "Investigating technological interventions and monitoring systems for individuals experiencing social isolation.",
     tags: [],
@@ -357,13 +357,18 @@ export const RESEARCH_AREAS = [
 
 export const COLLABORATORS = [
   {
-    name: "Joel Wester",
-    affiliation: "University of Copenhagen",
-    website: "https://www.joelwester.com/",
-  },
-  {
     name: "Hyunjoo Na",
     affiliation: "The Catholic University of Korea",
     website: "https://nursing.catholic.ac.kr/html/sub02/sub01_2_2.jsp",
+  },
+  {
+    name: "Inseok Hwang",
+    affiliation: "POSTECH",
+    website: "https://www.inseokhwang.com/",
+  },
+  {
+    name: "Joel Wester",
+    affiliation: "University of Copenhagen",
+    website: "https://www.joelwester.com/",
   },
 ];

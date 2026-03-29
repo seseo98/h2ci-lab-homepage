@@ -71,7 +71,7 @@ export default function HeroSection() {
 
             {/* Faculty */}
             <p className="text-base sm:text-lg text-white/80 mb-6">
-              Faculty: Dr. Eunkyung Jo
+              Led by Dr. Eunkyung Jo
             </p>
 
             {/* Location badge */}

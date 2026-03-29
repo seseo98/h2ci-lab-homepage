@@ -1,113 +1,38 @@
 import type { Metadata } from "next";
-import fs from "fs";
-import path from "path";
 import { MEMBERS, COLLABORATORS } from "@/lib/data";
-import LabPhotoCarousel from "@/components/LabPhotoCarousel";
 
 export const metadata: Metadata = {
   title: "People",
   description: "Meet the researchers of H2CI Lab at POSTECH.",
 };
 
-export default function PeoplePage() {
-  const labPhotoDir = path.join(process.cwd(), "public", "lab_photo");
-  const labPhotos = fs
-    .readdirSync(labPhotoDir)
-    .filter((f) => /\.(jpe?g|png|webp|gif)$/i.test(f))
-    .sort((a, b) => b.localeCompare(a))
-    .map((f) => `/lab_photo/${f}`);
+const ROLE_ORDER = ["pi", "phd", "ms", "undergrad", "intern", "admin", "alumni"];
 
-  const pi = MEMBERS.find((m) => m.role === "pi")!;
-  const phds = MEMBERS.filter((m) => m.role === "phd");
-  const masters = MEMBERS.filter((m) => m.role === "ms");
-  const undergrads = MEMBERS.filter((m) => m.role === "undergrad");
-  const interns = MEMBERS.filter((m) => m.role === "intern");
-  const admins = MEMBERS.filter((m) => m.role === "admin");
+export default function PeoplePage() {
+  const sorted = [...MEMBERS].sort(
+    (a, b) => ROLE_ORDER.indexOf(a.role) - ROLE_ORDER.indexOf(b.role)
+  );
 
   return (
     <div className="py-16 sm:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Page header */}
-        <div className="mb-8 text-center">
+        <div className="mb-12 text-center">
           <div className="brand-divider w-24 mb-5 mx-auto" />
           <h1 className="font-rajdhani text-4xl sm:text-5xl font-extrabold text-stone-900 tracking-tight">
             People
           </h1>
         </div>
 
-        {/* Lab photo carousel */}
-        <div className="mb-16">
-          <LabPhotoCarousel photos={labPhotos} />
-        </div>
-
-        {/* ── Faculty ─────────────────────────────────────────── */}
+        {/* ── Members grid ─────────────────────────────────── */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-stone-900 mb-7">Faculty</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-            <MemberCard member={pi} />
+            {sorted.map((m) => (
+              <MemberCard key={m.id} member={m} />
+            ))}
           </div>
         </section>
-
-        {/* ── PhD Students ───────────────────────────────────── */}
-        {phds.length > 0 && (
-          <section className="mb-16">
-            <h2 className="text-2xl font-bold text-stone-900 mb-7">Ph.D. Students</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-              {phds.map((m) => (
-                <MemberCard key={m.id} member={m} />
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* ── M.S. Students ──────────────────────────────────── */}
-        {masters.length > 0 && (
-          <section className="mb-16">
-            <h2 className="text-2xl font-bold text-stone-900 mb-7">M.S. Students</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-              {masters.map((m) => (
-                <MemberCard key={m.id} member={m} />
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* ── Undergrad ──────────────────────────────────────── */}
-        {undergrads.length > 0 && (
-          <section className="mb-16">
-            <h2 className="text-2xl font-bold text-stone-900 mb-7">Undergraduate Researchers</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-              {undergrads.map((m) => (
-                <MemberCard key={m.id} member={m} />
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* ── Undergraduate Interns ──────────────────────────── */}
-        {interns.length > 0 && (
-          <section className="mb-16">
-            <h2 className="text-2xl font-bold text-stone-900 mb-7">Undergraduate Interns</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-              {interns.map((m) => (
-                <MemberCard key={m.id} member={m} />
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* ── Administrator ──────────────────────────────────── */}
-        {admins.length > 0 && (
-          <section className="mb-16">
-            <h2 className="text-2xl font-bold text-stone-900 mb-7">Administrator</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-              {admins.map((m) => (
-                <MemberCard key={m.id} member={m} />
-              ))}
-            </div>
-          </section>
-        )}
 
         {/* ── Collaborators ──────────────────────────────────── */}
         <section className="mb-16">
@@ -160,19 +85,25 @@ function MemberCard({ member }: { member: (typeof MEMBERS)[number] }) {
       </div>
 
       {/* Info */}
-      <div className="text-center">
+      <div className="text-left">
         <h3 className="font-bold text-stone-900 text-base leading-snug">{member.name}</h3>
-        <p className="text-stone-400 text-sm mb-3">{member.nameKr}</p>
+        <p className="text-stone-400 text-sm">{member.nameKr}</p>
+        <p className="text-stone-500 text-xs font-medium mt-1 mb-2">{member.roleLabel}</p>
 
-        {/* Research tags */}
-        <div className="flex flex-wrap justify-center gap-1 mb-3">
-          {member.research.map((r) => (
-            <span key={r} className="tag text-xs">{r}</span>
-          ))}
-        </div>
+        {/* Research bullet points */}
+        {member.research.length > 0 && (
+          <ul className="mb-3 space-y-0.5">
+            {member.research.map((r) => (
+              <li key={r} className="text-xs text-stone-500 flex items-start gap-1">
+                <span className="mt-0.5 shrink-0">•</span>
+                <span>{r}</span>
+              </li>
+            ))}
+          </ul>
+        )}
 
         {/* Icon buttons */}
-        <div className="flex justify-center gap-2">
+        <div className="flex gap-2">
           {member.email && (
             <a
               href={`mailto:${member.email}`}

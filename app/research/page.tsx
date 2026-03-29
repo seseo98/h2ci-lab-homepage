@@ -41,7 +41,7 @@ const THEMES = [
     ],
   },
   {
-    title: "Social Isolation",
+    title: "Social Isolation Intervention",
     description:
       "Investigating technological interventions and monitoring systems for individuals experiencing social isolation.",
     cards: [

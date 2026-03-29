@@ -20,13 +20,13 @@ function NewsCard({ item, isLeft }: { item: (typeof NEWS)[number]; isLeft: boole
   const inner = (
     <div className="bg-white rounded-[10px]">
       <div className="px-6 py-5">
-        <p className={`text-stone-900 text-base font-bold leading-snug mb-2 ${isLeft ? "text-right" : "text-left"}`}>
+        <p className="text-stone-900 text-base font-bold leading-snug mb-2 text-left">
           {item.title}
         </p>
-        <p className={`text-stone-600 text-sm leading-relaxed ${isLeft ? "text-right" : "text-left"}`}>
+        <p className="text-stone-600 text-sm leading-relaxed text-left">
           {item.content}
         </p>
-        <p className={`text-stone-400 text-xs mt-2 ${isLeft ? "text-right" : "text-left"}`}>
+        <p className="text-stone-400 text-xs mt-2 text-left">
           {formatDate(item.date)}
         </p>
       </div>

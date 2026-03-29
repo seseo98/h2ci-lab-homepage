@@ -1,5 +1,8 @@
+import fs from "fs";
+import path from "path";
 import { PUBLICATIONS, RESEARCH_AREAS, NEWS } from "@/lib/data";
 import HeroSection from "@/components/HeroSection";
+import LabPhotoCarousel from "@/components/LabPhotoCarousel";
 
 function formatDate(d: string) {
   const parts = d.split("-");
@@ -8,8 +11,15 @@ function formatDate(d: string) {
 }
 
 export default function HomePage() {
-  const recentPubs = PUBLICATIONS.slice(0, 4);
-  const recentNews = [...NEWS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
+  const labPhotoDir = path.join(process.cwd(), "public", "lab_photo");
+  const labPhotos = fs
+    .readdirSync(labPhotoDir)
+    .filter((f) => /\.(jpe?g|png|webp|gif)$/i.test(f))
+    .sort((a, b) => b.localeCompare(a))
+    .map((f) => `/lab_photo/${f}`);
+
+  const recentPubs = PUBLICATIONS.slice(0, 5);
+  const recentNews = [...NEWS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
 
   const TIMELINE_COLOR = "#A61955";
   const CARD_GRADIENT_LEFT  = "linear-gradient(90deg, #F6A700, #CE602A, #A61955)";
@@ -19,6 +29,13 @@ export default function HomePage() {
     <div>
       {/* ── Hero ────────────────────────────────────────────── */}
       <HeroSection />
+
+      {/* ── Lab Photo Carousel ──────────────────────────────── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <LabPhotoCarousel photos={labPhotos} />
+        </div>
+      </section>
 
       {/* ── News ─────────────────────────────────────────────── */}
       <section className="py-24 bg-white">
@@ -40,16 +57,15 @@ export default function HomePage() {
               style={{ backgroundColor: TIMELINE_COLOR }}
             />
 
-            <div className="space-y-6 pb-4">
+            <div className="-space-y-2 pb-4">
               {recentNews.map((item, i) => {
                 const isLeft = i % 2 === 0;
                 const gradient = isLeft ? CARD_GRADIENT_LEFT : CARD_GRADIENT_RIGHT;
-                const align = isLeft ? "text-right" : "text-left";
                 const cardInner = (
                   <div className="bg-white rounded-[10px] px-5 py-4">
-                    <p className={`text-stone-900 text-sm font-bold leading-snug mb-1 ${align}`}>{item.title}</p>
-                    <p className={`text-stone-600 text-xs leading-relaxed ${align}`}>{item.content}</p>
-                    <p className={`text-stone-400 text-xs mt-1.5 ${align}`}>{formatDate(item.date)}</p>
+                    <p className="text-stone-900 text-sm font-bold leading-snug mb-1 text-left">{item.title}</p>
+                    <p className="text-stone-600 text-xs leading-relaxed text-left">{item.content}</p>
+                    <p className="text-stone-400 text-xs mt-1.5 text-left">{formatDate(item.date)}</p>
                   </div>
                 );
                 const cardWrapper = item.link ? (
@@ -111,7 +127,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {RESEARCH_AREAS.map((area) => (
-              <div key={area.title} className="text-center">
+              <div key={area.title} className="text-left">
                 <div className="text-5xl mb-5">{area.icon}</div>
                 <h3 className="font-bold text-stone-900 text-lg mb-3">{area.title}</h3>
                 <p className="text-stone-500 text-sm leading-relaxed">{area.description}</p>
@@ -143,18 +159,16 @@ export default function HomePage() {
                     pub.doi ? "hover:shadow-md hover:-translate-y-0.5 cursor-pointer" : ""
                   }`}
                 >
-                  {pub.award && (
-                    <div className="mb-3">
-                      <span className="award-badge">🏆 {pub.award}</span>
-                    </div>
-                  )}
-                  <div className="mb-2">
+                  <div className="flex items-center gap-2 mb-2">
                     <span
                       className="inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md text-white"
-                      style={{ backgroundColor: pub.type === "conference" ? "#F6A700CC" : "#A61955CC" }}
+                      style={{ backgroundColor: "#A61955CC" }}
                     >
-                      {pub.type}
+                      {pub.year}
                     </span>
+                    {pub.award && (
+                      <span className="award-badge">🏆 {pub.award}</span>
+                    )}
                   </div>
                   <h4 className="font-bold text-stone-900 text-base leading-snug mb-2">
                     {pub.title}
